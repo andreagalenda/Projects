@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Galenda | Robotics & Mechatronics Engineer</title>
+    <meta name="description" content="Portfolio of Andrea Galenda, MSc in Robotics and Mechatronics Engineering, specializing in multi-physics dynamics, robotics, and advanced simulation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-flex">
+                <div class="hero-content">
+                    <h1 class="fade-in">Hi, I'm <span class="gradient-text">Andrea Galenda</span></h1>
+                    <p class="fade-in">MSc in Mechanical Engineering (Mechatronics and Robotics track). Specialized in multi-physics dynamics, advanced robotics, and structural simulation for complex engineering challenges.</p>
+                    <div class="fade-in">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="about.html" class="btn btn-secondary" style="margin-left: 1rem;">More About Me</a>
+                    </div>
+                </div>
+                <img src="jpl-propic.jpg" alt="Andrea Galenda Profile Picture" class="profile-pic">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Highlighted <span class="gradient-text">Projects</span></h2>
+                <p>A selection of my work in mechanisms, robotics, and simulation.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <img src="Lab_Industrial_Robotics/Lab_industrial_robotics_cover_pic.png" alt="Mechanism Design and Robotics" class="project-image" id="img-robotics">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Mechatronics</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Robotics</span>
+                        </div>
+                        <h3 class="project-title">Mechanism Design & Robotics</h3>
+                        <p class="project-desc">Designed and 3D printed an electrically actuated end-effector to manipulate a modular motorcycle helmet. Programmed robot path planning with autonomous task verification via camera and torque feedback.</p>
+                        <a href="project-robotics.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <img src="Machine_Learning_for_Mechanical_Systems/PickPlace_setup.png" alt="SayCan for Pick and Place" class="project-image" id="img-saycan">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">LLMs</span>
+                            <span class="tag">ROS</span>
+                        </div>
+                        <h3 class="project-title">SayCan Framework for Pick & Place</h3>
+                        <p class="project-desc">Implemented a SayCan framework for a robotic arm. Combined LLMs for semantic scoring with ViLD and CLIPort for visual affordance to enable complex language-guided robotic manipulation tasks.</p>
+                        <a href="project-saycan.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Rail Wheel -->
+                <div class="project-card fade-in">
+                    <img src="Advanced_Dynamics_For_Mechanical_System/Images/wheel.png" alt="Rail Wheel Modal Analysis" class="project-image" id="img-railwheel">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Vibrations</span>
+                            <span class="tag">Signal Processing</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                        <h3 class="project-title">Operational Modal Analysis of a Rail Wheel</h3>
+                        <p class="project-desc">Extracted modal parameters and reconstructed mode shapes from real experimental vibration data of a suspended rail wheel using FRF curve fitting.</p>
+                        <a href="project-railwheel.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Harbour Crane FEA -->
+                <div class="project-card fade-in">
+                    <img src="Advanced_Dynamics_For_Mechanical_System/crane.jpeg" alt="Harbour Crane FEA" class="project-image" id="img-fea">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">FEA</span>
+                            <span class="tag">Structural Dynamics</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                        <h3 class="project-title">FEA of a Harbour Crane</h3>
+                        <p class="project-desc">Developed a custom Finite Element model for a steel harbour crane to evaluate natural frequencies, FRFs, and dynamic response under moving loads.</p>
+                        <a href="project-crane-fea.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card fade-in">
+                    <img src="Data_Analysis_for_Mechanical_Systems/Sketch.png" alt="Operational Modal Analysis" class="project-image" id="img-tierods" style="background-color: white; padding: 1rem; object-fit: contain;">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">System Identification</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <h3 class="project-title">Operational Modal Analysis</h3>
+                        <p class="project-desc">Reconstructed Modal Parameters and FRFs of tie rods from natural excitation data using FDD algorithm. Isolated parameter variations due to structural damage from thermal disturbances.</p>
+                        <a href="project-tierods.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Playground Safety ROM -->
+                <div class="project-card fade-in">
+                    <img src="Model_Order_Reduction/Playground_Safety/Cover_pic.png" alt="Playground Safety ROM" class="project-image" id="img-rom1" style="background-color: white; padding: 1rem; object-fit: contain;">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Reduced Order Modeling</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">FEniCS</span>
+                        </div>
+                        <h3 class="project-title">Playground Safety: Material Design (ROM)</h3>
+                        <p class="project-desc">Implemented Reduced Order Models (POD-NN & DL-ROM) to approximate the static elastic response of a playground floor structure under load.</p>
+                        <a href="project-rom-1.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7: Stunt Training Facility ROM -->
+                <div class="project-card fade-in">
+                    <img src="Model_Order_Reduction/Stunt_Training_Facility/Cover.png" alt="Stunt Training Facility ROM" class="project-image" id="img-rom2" style="background-color: white; padding: 1rem; object-fit: contain;">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Reduced Order Modeling</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">FEniCS</span>
+                        </div>
+                        <h3 class="project-title">Stunt Training Facility: Floor Design (ROM)</h3>
+                        <p class="project-desc">Developed time-dependent surrogate models using Deep Learning based ROMs to predict dynamic floor displacement during athlete impact.</p>
+                        <a href="project-rom-2.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="project-card fade-in">
+                    <img src="Machine_Learning_for_Mechanical_Systems/BO_setup.jpg" alt="Bayesian Optimization" class="project-image" id="img-bayes">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Control Systems</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                        <h3 class="project-title">Bayesian Optimization for Robot Control Tuning</h3>
+                        <p class="project-desc">Explored advanced control strategies by tuning robot controllers using Bayesian Optimization algorithms to improve trajectory tracking and system stability.</p>
+                        <a href="project-bayes.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:andrea.galenda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunt Training Facility: Floor Design (ROM) | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Stunt Training Facility: <span class="gradient-text">Floor Design (ROM)</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Model_Order_Reduction/Stunt_Training_Facility/Cover.png" alt="Stunt Training Facility" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; background-color: white;">
+                
+                <h3>Project Overview</h3>
+                <p>This project tackles the material design for a stunt training facility by developing a time-dependent, parametric Model Order Reduction (MOR) framework. The floor is modeled as a two-layer structure following the equations of linear elasticity, subjected to a localized, dynamic vertical impact exerted by an athlete's foot.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Time-Dependent FOM:</strong> Solve the 2D linear elastodynamics problem using Finite Elements in space (3,362 degrees of freedom) and finite differences in time (51 snapshots per simulation).</li>
+                    <li><strong>Parametrization:</strong> The system is parameterized by a 1D variable representing the relative thickness of the two floor layers, which inherently alters the effective Lamé coefficients across the domain.</li>
+                    <li><strong>Surrogate Modeling:</strong> Train and compare data-driven ROMs including POD-NN and DL-ROM to capture the spatio-temporal evolution of the deformation.</li>
+                    <li><strong>Performance Evaluation:</strong> Ensure the surrogate models achieve a space-time L2 relative error strictly below 2.5% on an unseen testing dataset.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>Starting with a dataset of 100 high-fidelity simulations spanning various layer thicknesses, I decomposed the time-dependent problem by treating time as an additional input parameter alongside the physical thickness parameter.</p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; margin-bottom: 2rem; justify-content: center;">
+                    <img src="Model_Order_Reduction/Stunt_Training_Facility/SVD_trend.png" alt="SVD Trend" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                    <img src="Model_Order_Reduction/Stunt_Training_Facility/Timesteps_sim.png" alt="Timesteps Simulation" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                </div>
+                <p style="margin-top: 1rem;">By performing a Singular Value Decomposition (SVD) on the concatenated snapshots, I extracted the dominant Proper Orthogonal Decomposition (POD) modes. I then architected and trained Neural Networks to map the time and thickness parameters onto the reduced subspace coordinates. The resulting DL-ROM pipeline drastically reduced computation time while retaining high physical accuracy, easily meeting the strict 2.5% error margin requirement.</p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; margin-bottom: 2rem; justify-content: center;">
+                    <img src="Model_Order_Reduction/Stunt_Training_Facility/Max_def_vs_Thickness.png" alt="Max Deformation vs Thickness" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                    <img src="Model_Order_Reduction/Stunt_Training_Facility/Max_def_vs_time.png" alt="Max Deformation vs Time" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                </div>
+                
+                <a href="https://github.com/andreagalenda/Model_Order_Reduction" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

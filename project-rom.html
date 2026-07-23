@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Order Reduction | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Model Order <span class="gradient-text">Reduction</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="assets/rom_simulation.png" alt="ROM Simulation" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project explored Reduced Order Modeling (ROM) techniques to simplify and accelerate complex numerical simulations related to linear elasticity and data-driven physics modeling.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Develop Reduced Order Models using POD-Galerkin and SVD.</li>
+                    <li>Model the deformation of a polyurethane foam playground floor under extreme loads.</li>
+                    <li>Simulate structural safety requirements for a stunt training facility.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>I successfully applied POD-Galerkin and Singular Value Decomposition (SVD) methods to compress high-dimensional physics simulations into lightweight models without losing significant accuracy. This was demonstrated by efficiently simulating a playground floor's linear elastic deformation under the weight of an ambulance and assessing dynamic load safety for a stunt facility.</p>
+                
+                <a href="https://github.com/andreagalenda/Model_Order_Reduction" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

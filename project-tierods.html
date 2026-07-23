@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Modal Analysis of Tie Rods | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Operational Modal Analysis of <span class="gradient-text">Tie Rods</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Data_Analysis_for_Mechanical_Systems/Sketch.png" alt="Tie Rods OMA" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; background-color: white; padding: 1rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project involved conducting an Operational Modal Analysis (OMA) to assess the structural health of tie rods. Unlike traditional modal analysis, OMA does not require artificial excitation but instead relies on ambient vibrations, leveraging the Natural Excitation Technique (NeXT). This methodology is highly beneficial for health monitoring, as it allows us to differentiate between natural degradation and critical structural damage by examining shifts in modal parameters.</p>
+                
+                <h3 style="margin-top: 2rem;">Experimental Setup & Testing Conditions</h3>
+                <p>The system consisted of a clamped-clamped tie-rod equipped with four accelerometers positioned at 5%, 33.3%, 50%, and 90% along its length. Signal acquisition was carried out under three distinct conditions:</p>
+                <img src="Data_Analysis_for_Mechanical_Systems/Exp_setup.png" alt="Experimental Setup" style="display: block; width: 100%; max-width: 600px; height: auto; margin: 1.5rem auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Healthy Condition</strong> (Sampled at 512 Hz)</li>
+                    <li><strong>Damage 1 Condition</strong> (Sampled at 1024 Hz)</li>
+                    <li><strong>Damage 2 Condition</strong> (Sampled at 1024 Hz)</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">Data Processing & FDD Algorithm</h3>
+                <p>The core of the analysis relied on the <strong>Frequency Domain Decomposition (FDD)</strong> algorithm:</p>
+                <ol style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Stationarity Check:</strong> Validated that the acquired random signals were stationary by computing the Root Mean Square (RMS) over subdivided signal records.</li>
+                    <li><strong>Cross Spectral Density (CSD):</strong> Computed the CSD matrix by applying an averaging process in the frequency domain with a 66% overlap across sub-records.</li>
+                    <li><strong>Singular Value Decomposition (SVD):</strong> Applied SVD frequency by frequency on the CSD matrix. The resulting singular value curves revealed clear resonance peaks representing the structure's eigenfrequencies.</li>
+                </ol>
+
+                <h3 style="margin-top: 2rem;">Results & Health Assessment</h3>
+                <p>By extracting the peaks of the singular value curves, the first four natural frequencies were successfully identified (ranging from approximately 13 Hz to 81 Hz). I observed distinct shifts in these frequencies across the healthy, Damage 1, and Damage 2 scenarios.</p>
+                <p style="margin-top: 1rem;">Additionally, the corresponding mode shapes were successfully reconstructed by extracting the first column of the SVD unitary matrix at the resonance frequencies. To rigorously compare these shapes across the different damage conditions, Modal Assurance Criterion (MAC) values were computed, enabling a reliable evaluation of the tie-rod's structural integrity.</p>
+                
+                <a href="https://github.com/andreagalenda/Data_Analysis_for_Mechanical_Systems" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

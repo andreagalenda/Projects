@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Andrea Galenda</title>
+    <meta name="description" content="Learn more about Andrea Galenda, MSc in Robotics and Mechatronics Engineering.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Portfolio</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">About <span class="gradient-text">Me</span></h1>
+            <p class="fade-in" style="max-width: 600px; margin: 0 auto 3rem auto;">I'm a Mechanical Engineering graduate specializing in multi-physics dynamics, robotics, and system simulation, currently a Visiting Student Researcher at NASA JPL.</p>
+            
+            <div class="content-box fade-in">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-rocket gradient-text"></i> Experience</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Dec 2025 – Present</span>
+                        <h4>Visiting Student Researcher - Aerial Robotic Systems</h4>
+                        <p style="color: var(--primary-color); font-size: 0.9rem;">NASA Jet Propulsion Laboratory | Pasadena, CA</p>
+                        <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.6; margin-top: 0.5rem; font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.5rem;">Developed a high-fidelity 6-DOF flight dynamics and thermodynamics simulator in MATLAB for a variable-altitude Venus Aerobot to predict trajectory and altitude control performance.</li>
+                            <li style="margin-bottom: 0.5rem;">Coupled non-linear vertical dynamics with gas expansion, aerodynamic forces, and planetary heat transfer to accurately simulate complex environmental interactions.</li>
+                            <li style="margin-bottom: 0.5rem;">Engineered a data-driven Reduced Order Model (ROM) surrogate using Physics-Informed Neural Networks (PINNs) to predict the dynamic shape of the Balloon-in-Balloon configuration.</li>
+                            <li style="margin-bottom: 0.5rem;">Developed comprehensive gas leakage models incorporating high-pressure viscous flow, molecular effusion, and solid-state permeation.</li>
+                            <li style="margin-bottom: 0.5rem;">Implemented an Unscented Kalman Filter (UKF) for advanced state estimation, enabling mechanism-agnostic gas leakage detection and disturbance modeling (e.g., acid deposition).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box fade-in">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-graduation-cap gradient-text"></i> Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sept 2023 – Present</span>
+                        <h4>MSc in Mechanical Engineering (Mechatronics and Robotics)</h4>
+                        <p style="color: var(--primary-color); font-size: 0.9rem;">Politecnico di Milano | Milan, Italy</p>
+                        <p>Relevant coursework: Mechanical Systems Dynamics, Vibrations Analysis, Optimal Control, Signal Processing, Actuating Devices, Advanced Machine Design, Machine Learning for Robotics.</p>
+                        <p>Weighted average: 29.2/30.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sept 2024 – Feb 2025</span>
+                        <h4>Erasmus+ Program, Electronics and Robotics Engineering</h4>
+                        <p style="color: var(--primary-color); font-size: 0.9rem;">Polytech Paris-Saclay | Paris, France</p>
+                        <p>Relevant coursework: AI for robotics, Computer Vision, Industrial Computing and Real Time.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sept 2020 – Sept 2023</span>
+                        <h4>BSc in Mechanical Engineering</h4>
+                        <p style="color: var(--primary-color); font-size: 0.9rem;">Politecnico di Milano | Milan, Italy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box fade-in">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-code gradient-text"></i> Skills</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem;">Simulation & Physics</h4>
+                        <p>MATLAB/Simulink, Python, ROS, Gazebo</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem;">Data Analysis</h4>
+                        <p>Python, C++, Signal Processing Toolbox (MATLAB)</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem;">CAD/CAE</h4>
+                        <p>SolidWorks, CATIA, Autodesk Inventor, Onshape</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem;">Languages</h4>
+                        <p>English (C1), French (B2), Italian (Native)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box fade-in">
+                <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-users gradient-text"></i> Extracurriculars & Volunteering</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">2016 – 2025</span>
+                        <h4>Competitive Rugby Player (Serie A Italy, Fédérale 3 France)</h4>
+                        <p>Balanced a demanding international academic career with the rigorous training schedule of high-level competitive rugby. Developed strong leadership, resilience, and cross-cultural teamwork skills in high-pressure environments across different countries.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">June 2019 – July 2019</span>
+                        <h4>Volunteer Support Worker</h4>
+                        <p>Assisted and supported individuals with disabilities in a daycare center setting. Fostered inclusive environments, developing strong interpersonal communication, patience, and empathy outside of an academic setting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:andrea.galenda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

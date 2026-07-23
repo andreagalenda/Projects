@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayCan Framework for Pick & Place | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">SayCan Framework for <span class="gradient-text">Pick & Place</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <!-- Replaced original header image with the video representation -->
+                <video controls autoplay loop muted style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--border-color);">
+                    <source src="Machine_Learning_for_Mechanical_Systems/PickPlace.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-style: italic;">Video demonstration: Pick the blue box and put in the red bowl</p>
+                
+                <h3>Project Overview</h3>
+                <p>This project involved building a sophisticated SayCan framework to enable a robotic arm to perform autonomous pick-and-place operations using high-level natural language instructions. The core of the system combines state-of-the-art Large Language Models (LLMs) with advanced vision-language detection models.</p>
+                
+                <h3 style="margin-top: 2rem;">Decision-Making Logic (Say & Can)</h3>
+                <p>The system evaluates action choices using a combined scoring mechanism:</p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Language Scoring ("Say"):</strong> An LLM evaluates the semantic coherence between a user's prompt (e.g., "Move tea box in bowl") and available action options.</li>
+                    <li><strong>Affordance Scoring ("Can"):</strong> A vision-language detection model (ViLD) processes RGB camera feeds to verify if the objects required for the action are physically present and visible.</li>
+                </ul>
+                <p style="margin-top: 1rem;">These scores are multiplied together, inherently penalizing actions that are linguistically logical but physically impossible in the current environment.</p>
+
+                <h3 style="margin-top: 3rem;">Action Proposal Example</h3>
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">The image below illustrates the movement proposed by the LLM after evaluating semantic coherence and environmental affordance.</p>
+                <img src="Machine_Learning_for_Mechanical_Systems/Movement_semantic.png" alt="LLM proposing a movement" style="display: block; width: 100%; height: auto; max-width: 800px; margin: 0 auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+
+                <h3 style="margin-top: 3rem;">Environment Enhancements & Object Recognition</h3>
+                <p>To improve scalability, new and previously unseen objects were introduced to the environment. I utilized ViLD to perform open-vocabulary object detection, extracting semantic labels and spatial locations without needing to retrain the recognition system from scratch.</p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Used ViLD bounding boxes to generate a custom training dataset for manipulation.</li>
+                    <li>Fine-tuned CLIPort (an end-to-end vision-language manipulation policy) to accurately grasp and place these newly introduced items based on natural language commands.</li>
+                </ul>
+                
+                <p style="margin-top: 1rem; color: var(--text-secondary);">The following image shows the insertion of a new object and its successful open-vocabulary recognition using ViLD.</p>
+                <img src="Machine_Learning_for_Mechanical_Systems/OBJ_recognition.png" alt="ViLD Object Recognition" style="display: block; width: 100%; height: auto; max-width: 800px; margin: 1.5rem auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+
+                <h3 style="margin-top: 3rem;">Dynamic Feedback Iteration</h3>
+                <p>A critical limitation of earlier LLM planners was their inability to recognize task completion (e.g., continuously trying to move blocks in a "Stack all the blocks" task, causing them to fall). I integrated a dynamic feedback system where ViLD continuously updates the scene state after every action. I also implemented custom geometric evaluation functions (like <code>areblocksstacked</code>) to verify the physical success of tasks, terminating the sequence automatically once conditions are met.</p>
+                
+                <a href="https://github.com/andreagalenda/Machine_Learning_for_Mechanical_Systems" target="_blank" class="btn btn-primary" style="margin-top: 3rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

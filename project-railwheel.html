@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Modal Analysis of a Rail Wheel | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Operational Modal Analysis of a <span class="gradient-text">Rail Wheel</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Advanced_Dynamics_For_Mechanical_System/Images/wheel.png" alt="Rail Wheel Modal Analysis" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project focused on the modal parameters identification of a rail wheel based on real experimental data. The wheel was suspended using elastic supports and excited using a dynamo-metric impact hammer, with responses captured via twelve accelerometers.</p>
+                
+                <img src="Advanced_Dynamics_For_Mechanical_System/impulses-wheel.jpeg" alt="Impulse test points on the rail wheel" style="display: block; width: 100%; height: auto; max-width: 600px; margin: 1.5rem auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Data Processing:</strong> Process raw vibration data from 12 accelerometers to generate experimental Frequency Response Functions (FRFs) and coherence functions.</li>
+                    <li><strong>Initial Guess Estimation:</strong> Analyze the coherence drops near resonant peaks to intelligently select initial guesses for natural frequencies and identify nodal points.</li>
+                    <li><strong>Error Minimization:</strong> Implement a least-square error minimization algorithm to numerically fit the experimental FRF curves.</li>
+                    <li><strong>Mode Shape Reconstruction:</strong> Extract the natural frequencies and modal damping, and interpolate the mode shapes along the wheel's geometry using a spline function.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>I successfully transformed raw impact test data into a complete modal model of the rail wheel. By utilizing an advanced error minimization procedure in MATLAB, I fit numerical FRFs to the experimental data, accurately capturing the resonance peaks while filtering out noise. </p>
+                <p style="margin-top: 1rem;">Through evaluating the imaginary part of the fitted transfer functions, I successfully reconstructed the continuous mode shapes of the structure, proving the effectiveness of FRF-based multi-mode curve fitting methods for complex mechanical systems.</p>
+                
+                <h3 style="margin-top: 3rem;">Mode Shapes Reconstruction</h3>
+                <img src="Advanced_Dynamics_For_Mechanical_System/Images/Interpolated 1 e 2 mode shapes.png" alt="Reconstructed Mode Shapes" style="display: block; width: 100%; height: auto; max-width: 800px; margin: 1.5rem auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                
+                <a href="https://github.com/andreagalenda/Advanced_Dynamics_For_Mechanical_System" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

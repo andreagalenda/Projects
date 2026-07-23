@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground Safety: Material Design (ROM) | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Playground Safety: <span class="gradient-text">Material Design (ROM)</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Model_Order_Reduction/Playground_Safety/Cover_pic.png" alt="Playground Safety" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; background-color: white;">
+                
+                <h3>Project Overview</h3>
+                <p>This project leverages Model Order Reduction (MOR) techniques and Deep Learning to rapidly evaluate the safety of playground floor structures. A full-order Finite Element (FE) model was developed in FEniCS to compute the static structural displacement of an elastic pad with complex internal void structures (rectangular cutouts) subjected to an external load.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Full Order Model (FOM):</strong> Formulate the linear elasticity variational problem evaluating the deformation given variable material parameters like density (<code>rho</code>), Lamé parameters (<code>lambda</code>, <code>mu</code>), and external mass load.</li>
+                    <li><strong>Data Generation:</strong> Compute and collect high-fidelity spatial snapshots using a fine FE mesh (via FEniCS) for numerous parameter configurations to generate a robust training dataset.</li>
+                    <li><strong>Surrogate Modeling:</strong> Train data-driven Reduced Order Models, such as POD-NN and DL-ROM, to bypass computationally expensive FE solves and predict the displacement field in real-time.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>I successfully defined the parametric static structural problem and solved it using the FEniCS framework to build a rich dataset of displacement snapshots. I then mapped the parameter space directly to the reduced latent space using Neural Networks.</p>
+                <img src="Model_Order_Reduction/Playground_Safety/SV_trend.png" alt="Singular Values Trend" style="display: block; width: 100%; max-width: 600px; height: auto; margin: 1.5rem auto 2rem auto; border-radius: 8px; border: 1px solid var(--border-color); background-color: white;">
+                <p style="margin-top: 1rem;">The resulting surrogate models (POD-NN and DL-ROM) achieved excellent relative error metrics on unseen test configurations, enabling nearly instantaneous evaluation of the playground pad's safety margin under various loads and material stiffness choices.</p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; margin-bottom: 2rem; justify-content: center;">
+                    <img src="Model_Order_Reduction/Playground_Safety/Basis_function%20representation.png" alt="Basis Functions" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                    <img src="Model_Order_Reduction/Playground_Safety/ROMvFOM.png" alt="ROM vs FOM Comparison" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                </div>
+                
+                <a href="https://github.com/andreagalenda/Model_Order_Reduction" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

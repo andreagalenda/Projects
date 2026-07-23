@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanism Design & Robotics | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Mechanism Design & <span class="gradient-text">Robotics</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Lab_Industrial_Robotics/Lab_Industrial_robotics.png" alt="Robotics Helmet Mechanism" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project was developed for the "Innovative Applications of Industrial Robotics" lab. The goal was to engineer a complete automated testing system capable of securing and manipulating a modular motorcycle helmet. The solution seamlessly integrated custom hardware design, advanced end-effector robotics, and robust software programming for reliable autonomous operation.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Custom Support Design:</strong> Engineer a 3D-printed base to rigidly secure the helmet during robotic interactions, resisting impacts and operational loads.</li>
+                    <li><strong>Custom End-Effector:</strong> Design and 3D print a servomotor-driven gripper capable of unlocking the chin guard release mechanism and manipulating the visor.</li>
+                    <li><strong>Robot Programming & UI:</strong> Develop adaptable path-planning software (Python) and a user-friendly UI with live cycle updates.</li>
+                    <li><strong>Safety & Fault Detection:</strong> Ensure reliable operation by utilizing a robot-integrated camera for visual inspection before critical movements.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p><strong>Hardware Design:</strong> I designed a 230x285x183 mm 3D-printed support featuring a sophisticated locking strategy. It combines rear bolts and an internal locking device utilizing opposite-threaded M12 screws to compress the helmet's cheek pads, securing it rigidly at three points. For the end-effector (117x88x88 mm), I implemented a servomotor-driven rack-and-pinion system directly mounted to the robotic arm to open the chin guard and visor.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Software & Vision Integration:</strong> The system was driven by a robust Python architecture featuring real-time UI updates, cycle counting, and complete sequence adaptability regardless of helmet size. To ensure task safety, I integrated a TMFlow Vision Job using color markers on key helmet areas; the robot verifies the helmet's state via color recognition before proceeding, automatically halting the motion sequence and alerting the user if an error is detected.</p>
+                
+                <p style="margin-top: 1rem;">The final demonstration successfully showcased the robotic arm recognizing the safety helmet via vision, navigating the environment while adhering to strict safety constraints, and smoothly executing the pick-and-place maneuver.</p>
+                
+                <h3 style="margin-top: 3rem;">CAD Design: Gripper & Helmet Support</h3>
+                <p>The custom gripper end-effector and the helmet support structure were both fully modeled in SolidWorks. Below is the exploded view animation of the gripper, alongside the final assembly rendering and the helmet support stand.</p>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem; margin-bottom: 2rem; align-items: center;">
+                    <video controls autoplay loop muted style="width: 100%; max-width: 800px; border-radius: 12px; border: 1px solid var(--border-color); background-color: black;">
+                        <source src="Lab_Industrial_Robotics/CAD/Final%20gripper/Exploded%20view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 800px;">
+                        <img src="Lab_Industrial_Robotics/CAD/Final%20gripper/Gripper_assembly.JPG" alt="Gripper Assembly" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                        <img src="Lab_Industrial_Robotics/CAD/Helmet%20support/supporto_casco.png" alt="Helmet Support" style="flex: 1 1 300px; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); background-color: white;">
+                    </div>
+                </div>
+                
+                <a href="https://github.com/andreagalenda/Lab_Industrial_Robotics" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

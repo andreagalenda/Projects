@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayesian Optimization for Robot Control Tuning | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Bayesian Optimization for <span class="gradient-text">Robot Control Tuning</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Machine_Learning_for_Mechanical_Systems/BO_setup.jpg" alt="Bayesian Optimization Setup" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project explored the application of Bayesian Optimization to automate the tuning of PID control parameters for a multi-joint robotic system. The goal was to optimize trajectory tracking performance while ensuring stability, motion smoothness, and compliance with hardware torque limits.</p>
+
+                <h3 style="margin-top: 3rem;">System Architecture</h3>
+                <img src="Machine_Learning_for_Mechanical_Systems/System_sheme_BO.png" alt="Block diagram of the system" style="display: block; width: 100%; height: auto; max-width: 800px; margin: 1.5rem auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                
+                <h3 style="margin-top: 3rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Sequential Joint Optimization:</strong> Tune controller gains one joint at a time, moving backwards from the end-effector to reduce problem dimensionality.</li>
+                    <li><strong>Mass Parameter Estimation:</strong> Estimate equivalent link-mass parameters via BO to decouple joint dynamics and improve feedforward control.</li>
+                    <li><strong>Two-Phase Optimization Strategy:</strong> Separate the optimization into Exploration (using the Lower Confidence Bound acquisition function) and Exploitation (using Expected Improvement Plus).</li>
+                    <li><strong>Hardware Limitations:</strong> Implement motor torque saturation constraints to ensure industrial safety.</li>
+                </ul>
+
+                <h3 style="margin-top: 3rem;">What Was Done</h3>
+                <p>I successfully implemented a sophisticated two-phase Bayesian Optimization strategy that proved significantly more efficient than a standard single-phase expected-improvement approach. Initially, the system broadly explored the parameter space using the Lower Confidence Bound (LCB) acquisition function, before seamlessly transitioning to focused exploitation using Expected Improvement Plus (EI+).</p>
+                <p style="margin-top: 1rem;">The tuning process was divided into two distinct stages: first estimating the mass parameters in open-loop conditions by minimizing acceleration tracking errors, followed by a closed-loop PID tuning phase. I also designed a comprehensive cost function to penalize tracking errors across all joints while ensuring smooth actuation effort without violating strict motor torque saturation constraints.</p>
+
+                <h3 style="margin-top: 3rem;">Results</h3>
+                <div style="display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Tracking Results (No Saturation)</h4>
+                        <img src="Machine_Learning_for_Mechanical_Systems/BO_res_no_Saturation.jpg" alt="Tracking without saturation" style="display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Tracking Results (With Saturation)</h4>
+                        <img src="Machine_Learning_for_Mechanical_Systems/BO_res_Saturation.jpg" alt="Tracking with saturation" style="display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);">
+                    </div>
+                </div>
+                
+                <a href="https://github.com/andreagalenda/Machine_Learning_for_Mechanical_Systems" target="_blank" class="btn btn-primary" style="margin-top: 3rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

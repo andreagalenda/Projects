@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEA of a Harbour Crane | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">FEA of a <span class="gradient-text">Harbour Crane</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="Advanced_Dynamics_For_Mechanical_System/crane.jpeg" alt="Harbour Crane" style="display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>This project involved developing a comprehensive Finite Element Analysis (FEA) of a massive steel harbour crane to assess its structural integrity and dynamic responses under various loading and operating conditions.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Custom FE Model:</strong> Build a custom finite element mesh ensuring all elements operate within their quasi-static region for the frequency band of interest.</li>
+                    <li><strong>Modal Extraction:</strong> Assemble mass, stiffness, and Rayleigh damping matrices to compute the crane's natural frequencies and mode shapes.</li>
+                    <li><strong>FRF Synthesis:</strong> Compare full FE-based transfer functions against those synthesized using a truncated Modal Superposition approach.</li>
+                    <li><strong>Dynamic Simulation:</strong> Evaluate the structural displacement over time under a moving load (simulating a trolley) with a predefined acceleration/deceleration profile.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>I successfully built the FE model in MATLAB from the ground up, partitioning the global mass and stiffness matrices to solve the eigenvalue problem for the free degrees of freedom. This revealed the primary bending and torsional modes of the crane.</p>
+                <p style="margin-top: 1rem;">I further proved that a modal superposition approach utilizing only the first three modes could accurately approximate the full system's Frequency Response Functions (FRFs). Finally, I simulated the structural response to both its own static weight and a 1000N dynamic load moving across the boom, verifying the stability and safety limits of the crane design.</p>
+                
+                <h3 style="margin-top: 3rem;">Moving Load Simulation</h3>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; margin-bottom: 2rem; justify-content: center; align-items: center;">
+                    <img src="Advanced_Dynamics_For_Mechanical_System/crane_moving_load.gif" alt="Moving Load Animation" style="width: 60%; min-width: 300px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <img src="Advanced_Dynamics_For_Mechanical_System/Immagini-report/Andamento.jpg" alt="Displacement Time History" style="width: 55%; min-width: 250px; aspect-ratio: 2 / 1; object-fit: contain; border-radius: 12px; border: 1px solid var(--border-color); background-color: white; padding: 1rem;">
+                </div>
+                
+                <a href="https://github.com/andreagalenda/Advanced_Dynamics_For_Mechanical_System" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

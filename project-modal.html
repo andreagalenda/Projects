@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Analysis & FEA | Andrea Galenda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">AG.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section page-header">
+        <div class="container">
+            <h1 class="fade-in">Modal Analysis & <span class="gradient-text">FEA</span></h1>
+            
+            <div class="content-box fade-in" style="margin-top: 3rem;">
+                <img src="assets/modal_analysis.png" alt="Modal Analysis" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem;">
+                
+                <h3>Project Overview</h3>
+                <p>A comprehensive study involving Modal Analysis on a rail wheel and Finite Element Analysis (FEA) on a harbor crane to assess structural and dynamic responses.</p>
+                
+                <h3 style="margin-top: 2rem;">Main Requirements & Tasks</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Extract modal parameters from frequency domain impulse test data.</li>
+                    <li>Reconstruct mode shapes and modal parameters of a harbor crane.</li>
+                    <li>Analyze static and dynamic responses under moving loads.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">What Was Done</h3>
+                <p>I processed frequency domain data from impulse tests using least square error minimization to perform the modal analysis of the rail wheel. For the harbor crane, I conducted a full FEA simulation in MATLAB/Python to determine its natural frequencies, mode shapes, and its structural integrity when subjected to dynamic and static moving loads.</p>
+                
+                <a href="https://github.com/andreagalenda/Advanced_Dynamics_For_Mechanical_System" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/andreagalenda" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Andrea Galenda. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
