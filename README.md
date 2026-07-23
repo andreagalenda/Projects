@@ -1,6 +1,10 @@
 # Projects - MSc in Robotics and Mechatronics Engineering
 
-This repository contains the projects developed during my MSc in Robotics and Mechatronics Engineering at Politecnico di Milano. Each folder contains the comprehensive reports in PDF format alongside the associated simulation and analysis code (MATLAB, Python, C++).
+
+Check out the website version: https://andreagalenda.github.io/Projects/
+
+
+This repository contains the projects developed during my MSc in Robotics and Mechatronics Engineering at Politecnico di Milano. Each folder contains the comprehensive reports in PDF format alongside the associated simulation and analysis code where available (MATLAB, Python, C++).
 
 Below is a detailed breakdown of the projects included in this repository.
 
